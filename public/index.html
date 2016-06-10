@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>	Tweettweet IO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+
+	<script src="assets/js/html5shiv.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://d3js.org/topojson.v1.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="javascripts/datamap.js"></script>
+	<!--<script language="JavaScript" type="text/javascript" src="javascripts/datamap.min.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/1.10.0/d3-legend.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+</head>
+<body ng-app="app" ng-controller="controller">
+
+	<!-- Page Top Section -->
+	<section id="page-top" class="section-style" data-background-image="images/background/page-top.jpg">
+
+		<div class="pattern">
+			<div class="tweet-stream-container">
+				<div class="stream-header flexCenter">
+					<img src="./images/twitter-icon.png">
+					<h3>Data Stream</h3>
+				</div>
+
+				<div ng-repeat="tweet in data track by $index" class="slide">
+					<div class="twitter-user">
+						<div class="flex">
+							<img class='profile-pic' src={{tweet.profile_pic}}>
+							<div class="twitter-user-content">
+								<p><b>@{{tweet.screen_name}}</b>
+								{{tweet.name | limitTo:50}}...</p>
+							</div>
+						</div>
+				</div>
+				</div>
+			</div>
+			<div class="container">
+					<h1 class="site-title">
+						Tweettweet IO
+					</h1>
+
+				<form id="contact-form" class="clearfix">
+						<div class="col-sm-10">
+							<input type="text"  class="form-control" id="search" name="search" required placeholder="Search Trending">
+						</div>
+						<div class="col-sm-2">
+							<button type='button' class="btn form-control">Search</button>
+						</div>
+				</form>
+
+				<div class='trending'>
+					<div class="col-sm-4">
+						<button type='button' class="trending-box form-control" ng-click="chooseHeatMap()">Aggregate
+							Count</button>
+					</div>
+					<div class="col-sm-4">
+						<button type='button' class="trending-box form-control"
+								ng-click="chooseSentiment()">Sentiment</button>
+					</div>
+					<div class="col-sm-4">
+						<button type='button' class="trending-box form-control">Trending Now</button>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="flex-center choice">
+					<h1>
+						{{choice}}
+					</h1>
+			</div>
+			<div class="flex-center map">
+				<div id="svg"></div>
+			</div>
+		</div>
+	</section>
+
+	<!--Connection to Pubnub-->
+	<!--Javascript Libaries-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script>
+
+	<!--Pubnub-->
+	<script src="https://cdn.pubnub.com/sdk/pubnub-angular/pubnub-angular-3.2.0.js"></script>
+	<script src="https://cdn.pubnub.com/pubnub-3.14.5.js"></script>
+
+
+	<!-- jQuery Library -->
+	<script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/functions.js"></script>
+
+	<!--Build Maps-->
+	<script>
+		//basic map config with custom fills, mercator projection
+		var map = new Datamap({
+			scope: 'world',
+			element: document.getElementById('svg'),
+			projection: 'equirectangular',
+//        setProjection: function(element) {
+//            var projection = d3.geo.equirectangular()
+////            var projection = d3.geo.azimuthalEqualArea()
+//                    .center([0, 20])
+//                    .rotate([0, 0])
+//                    .scale(220)
+//                    .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+//            var path = d3.geo.path()
+//                    .projection(projection);
+//
+//            return {path: path, projection: projection};
+//        },
+			height: 475,
+			fills: {
+				defaultFill: '#303f52',
+				red: 'red',
+			},  geographyConfig: {
+				highlightOnHover: false,
+				popupOnHover: true,
+			},
+			bubblesConfig:{
+				popupOnHover: false,
+			}
+		});
+
+		map.graticule();
+	</script>
+
+	<script>
+		var countryCodeConversion = {"BD": "BGD", "BE": "BEL", "BF": "BFA", "BG": "BGR", "BA": "BIH",
+			"BB": "BRB", "WF": "WLF", "BL": "BLM", "BM": "BMU", "BN": "BRN", "BO": "BOL", "BH": "BHR",
+			"BI": "BDI", "BJ": "BEN", "BT": "BTN", "JM": "JAM", "BV": "BVT", "BW": "BWA", "WS": "WSM",
+			"BQ": "BES", "BR": "BRA", "BS": "BHS", "JE": "JEY", "BY": "BLR", "BZ": "BLZ", "RU": "RUS",
+			"RW": "RWA", "RS": "SRB", "TL": "TLS", "RE": "REU", "TM": "TKM", "TJ": "TJK", "RO": "ROU",
+			"TK": "TKL", "GW": "GNB", "GU": "GUM", "GT": "GTM", "GS": "SGS", "GR": "GRC", "GQ": "GNQ",
+			"GP": "GLP", "JP": "JPN", "GY": "GUY", "GG": "GGY", "GF": "GUF", "GE": "GEO", "GD": "GRD",
+			"GB": "GBR", "GA": "GAB", "SV": "SLV", "GN": "GIN", "GM": "GMB", "GL": "GRL", "GI": "GIB",
+			"GH": "GHA", "OM": "OMN", "TN": "TUN", "JO": "JOR", "HR": "HRV", "HT": "HTI", "HU": "HUN",
+			"HK": "HKG", "HN": "HND", "HM": "HMD", "VE": "VEN", "PR": "PRI", "PS": "PSE", "PW": "PLW",
+			"PT": "PRT", "SJ": "SJM", "PY": "PRY", "IQ": "IRQ", "PA": "PAN", "PF": "PYF", "PG": "PNG",
+			"PE": "PER", "PK": "PAK", "PH": "PHL", "PN": "PCN", "PL": "POL", "PM": "SPM", "ZM": "ZMB",
+			"EH": "ESH", "EE": "EST", "EG": "EGY", "ZA": "ZAF", "EC": "ECU", "IT": "ITA", "VN": "VNM",
+			"SB": "SLB", "ET": "ETH", "SO": "SOM", "ZW": "ZWE", "SA": "SAU", "ES": "ESP", "ER": "ERI",
+			"ME": "MNE", "MD": "MDA", "MG": "MDG", "MF": "MAF", "MA": "MAR", "MC": "MCO", "UZ": "UZB",
+			"MM": "MMR", "ML": "MLI", "MO": "MAC", "MN": "MNG", "MH": "MHL", "MK": "MKD", "MU": "MUS",
+			"MT": "MLT", "MW": "MWI", "MV": "MDV", "MQ": "MTQ", "MP": "MNP", "MS": "MSR", "MR": "MRT",
+			"IM": "IMN", "UG": "UGA", "TZ": "TZA", "MY": "MYS", "MX": "MEX", "IL": "ISR", "FR": "FRA",
+			"IO": "IOT", "SH": "SHN", "FI": "FIN", "FJ": "FJI", "FK": "FLK", "FM": "FSM", "FO": "FRO",
+			"NI": "NIC", "NL": "NLD", "NO": "NOR", "NA": "NAM", "VU": "VUT", "NC": "NCL", "NE": "NER",
+			"NF": "NFK", "NG": "NGA", "NZ": "NZL", "NP": "NPL", "NR": "NRU", "NU": "NIU", "CK": "COK",
+			"XK": "XKX", "CI": "CIV", "CH": "CHE", "CO": "COL", "CN": "CHN", "CM": "CMR", "CL": "CHL",
+			"CC": "CCK", "CA": "CAN", "CG": "COG", "CF": "CAF", "CD": "COD", "CZ": "CZE", "CY": "CYP",
+			"CX": "CXR", "CR": "CRI", "CW": "CUW", "CV": "CPV", "CU": "CUB", "SZ": "SWZ", "SY": "SYR",
+			"SX": "SXM", "KG": "KGZ", "KE": "KEN", "SS": "SSD", "SR": "SUR", "KI": "KIR", "KH": "KHM",
+			"KN": "KNA", "KM": "COM", "ST": "STP", "SK": "SVK", "KR": "KOR", "SI": "SVN", "KP": "PRK",
+			"KW": "KWT", "SN": "SEN", "SM": "SMR", "SL": "SLE", "SC": "SYC", "KZ": "KAZ", "KY": "CYM",
+			"SG": "SGP", "SE": "SWE", "SD": "SDN", "DO": "DOM", "DM": "DMA", "DJ": "DJI", "DK": "DNK",
+			"VG": "VGB", "DE": "DEU", "YE": "YEM", "DZ": "DZA", "US": "USA", "UY": "URY", "YT": "MYT",
+			"UM": "UMI", "LB": "LBN", "LC": "LCA", "LA": "LAO", "TV": "TUV", "TW": "TWN", "TT": "TTO",
+			"TR": "TUR", "LK": "LKA", "LI": "LIE", "LV": "LVA", "TO": "TON", "LT": "LTU", "LU": "LUX",
+			"LR": "LBR", "LS": "LSO", "TH": "THA", "TF": "ATF", "TG": "TGO", "TD": "TCD", "TC": "TCA",
+			"LY": "LBY", "VA": "VAT", "VC": "VCT", "AE": "ARE", "AD": "AND", "AG": "ATG", "AF": "AFG",
+			"AI": "AIA", "VI": "VIR", "IS": "ISL", "IR": "IRN", "AM": "ARM", "AL": "ALB", "AO": "AGO",
+			"AQ": "ATA", "AS": "ASM", "AR": "ARG", "AU": "AUS", "AT": "AUT", "AW": "ABW", "IN": "IND",
+			"AX": "ALA", "AZ": "AZE", "IE": "IRL", "ID": "IDN", "UA": "UKR", "QA": "QAT", "MZ": "MOZ"}
+
+		var app = angular.module('app', ['pubnub.angular.service', 'ngAnimate']);
+
+		app.controller('controller', function($scope, Pubnub, $sce){
+
+			$scope.data = [];
+			$scope.map={};
+			$scope.mapSentiment = {};
+
+			var colorScale = d3.scale.linear().domain([0, 20]).range(['yellow', 'red']);
+			$scope.choice = 'Heat Map of Data Stream';
+			$scope.choiceBool = 0;
+
+			var runDataStream = function(tweet){
+				//Appends to angular variable array for databinding
+				$scope.data.unshift(tweet[0]);
+				if($scope.data.length > 25) $scope.data.pop();
+				$scope.$digest();
+			}
+
+			$scope.chooseHeatMap = function(){
+				$scope.choice = 'Heat Map of Data Stream';
+				$scope.choiceBool = 0;
+				map.updateChoropleth(null, {reset: true})
+				colorScale = d3.scale.linear().domain([0, 20]).range(['yellow', 'red']);
+				resetScale(colorScale);
+			}
+
+			$scope.chooseSentiment = function(){
+				$scope.choice = "Net Sentiment Analysis";
+				$scope.choiceBool = 1;
+				$scope.map={};
+				map.updateChoropleth(null, {reset: true})
+				colorScale = d3.scale.linear().domain([-10, 10]).range(['#87be9b', '#eb514c']);
+				resetScale(colorScale);
+			}
+
+//			Resets scale on map periodically
+			var resetScale = function(scale){
+//				$('.legendLinear').remove();
+				var svg = d3.select("svg");
+
+				svg.append("g")
+						.attr("class", "legendLinear")
+						.attr("transform", "translate(20,20)");
+
+				var legendLinear = d3.legend.color()
+						.shapeWidth(50)
+						.cells(5)
+						.orient('horizontal')
+						.scale(colorScale);
+
+				svg.select(".legendLinear")
+						.call(legendLinear);
+
+			}
+			resetScale(colorScale);
+
+//			Updates Count on Map
+			var updateMapCount = function(tweet){
+				if(tweet == null || tweet.length == 0) return;
+				//Generates country code
+				var country_code = countryCodeConversion[tweet[0].country_code];
+
+				//Generates color
+				if($scope.map[country_code] == null) $scope.map[country_code] = 1;
+				else $scope.map[country_code]++;
+				var color = colorScale($scope.map[country_code]);
+
+				//Generates Map Command Object
+				var mapUpdateCommand = {};
+				mapUpdateCommand[country_code]=color;
+				map.updateChoropleth(mapUpdateCommand);
+			}
+//			Update Scale and Map if Scale gets larger
+			var currentScale = 20;
+			var updateScaleAndMap = function(){
+				if($scope.map.USA >= currentScale){
+					currentScale = 2*currentScale;
+					var randomColor1 = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+					var randomColor2 = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+					colorScale = d3.scale.linear().domain([0, currentScale]).range([randomColor1, randomColor2]);
+					for(key in $scope.map){
+						//Generates color
+						var color = colorScale($scope.map[key]);
+						var mapUpdateCommand = {};
+						mapUpdateCommand[key]=color;
+						map.updateChoropleth(mapUpdateCommand);
+					}
+					resetScale(colorScale);
+				}
+			}
+			//			Updates Count on Map
+			var updateMapCountSentiment = function(tweet){
+				if(tweet == null || tweet.length == 0) return;
+				//Generates country code
+				var country_code = countryCodeConversion[tweet[0].country_code];
+
+				//Generates color
+				if($scope.mapSentiment[country_code] == null) $scope.mapSentiment[country_code] = 0;
+				$scope.mapSentiment[country_code]+= tweet[0].sentiment;
+				var color = colorScale($scope.mapSentiment[country_code]);
+
+				//Generates Map Command Object
+				var mapUpdateCommand = {};
+				mapUpdateCommand[country_code]=color; console.log(mapUpdateCommand)
+				map.updateChoropleth(mapUpdateCommand);
+			}
+//			Update Scale and Map if Scale gets larger
+
+//			Access to Pubnub
+			$scope.keys = {
+				publish_key: "pub-c-445b5ca8-e223-432e-b8b2-d1db09d9412f",
+				subscribe_key: "sub-c-4a3383f2-2e6e-11e6-8b91-02ee2ddab7fe",
+//				publish_key: 'pub-c-88acaf32-5578-438f-8d85-d11659da9bb6',
+//				subscribe_key: 'sub-c-8d85ca5e-2629-11e6-9f24-02ee2ddab7fe'
+			}
+			Pubnub.init({
+				publish_key: $scope.keys.publish_key,
+				subscribe_key: $scope.keys.subscribe_key
+			})
+
+			//Updates the bubbles on map
+			function publishTweet(tweet) {
+				if(tweet == null || tweet.length == 0) return;
+				//Pushes bubbles on visualization
+				map.bubbles([tweet[0]]);
+			}
+
+//			Access to Pubnub
+			var counter = 0;
+			Pubnub.subscribe({
+				channel : 'tweet_stream',
+				message : function(tweetArray){
+					counter++;
+					if(counter < 200){
+						//Runs datastream on left
+						runDataStream(tweetArray);
+						//Publishes Tweet Bubble
+						publishTweet(tweetArray);
+
+						switch($scope.choiceBool){
+							case 0:
+								//Updates Map Count and Scale
+								updateMapCount(tweetArray);
+								updateScaleAndMap();
+								break;
+							case 1:
+								updateMapCountSentiment(tweetArray);
+								break;
+						}
+					}
+					//To allow databindings to catch up.  Not optimized
+					if(counter > 220) counter = 0;
+					//For debugging
+					if(counter == 5) console.log(tweetArray);
+				},
+				connect : function(data) {
+					Pubnub.publish({
+						channel : 'tweet_stream',
+						message : 'Successfully connected'
+					});
+				}
+			});
+		});
+
+		var query = function(query){
+			$.ajax({
+				url: '/search',
+				data: {
+					hi: 'bye'
+				},
+				dataType: 'jsonp',
+				type: 'GET',
+				error: function(error) {
+					console.log(error);
+				},
+				success: function(data) {
+					console.log(data)
+					console.log('received');
+				},
+			});
+		}
+	</script>
+</body>
+</html>

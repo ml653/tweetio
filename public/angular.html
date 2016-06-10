@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <style>
+        svg {
+            border: deepskyblue solid 2px;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="controller">
+
+<!--<script language="JavaScript" type="text/javascript" src="javascripts/datamap.js"></script>-->
+<script language="JavaScript" type="text/javascript" src="javascripts/datamap.min.js"></script>
+<div class="center">
+    <div class="flex"><h1>Tweettweet IO</h1></div>
+    <div class="flex"><h1>Tweettweet IO</h1></div>
+    <div class="flex"><h1>Tweettweet IO</h1></div>
+    <div class="flex"><h1>Tweettweet IO</h1></div>
+    <div class="flex"><h1>Tweettweet IO</h1></div>
+    <div>hi</div><div>hi</div><div>hi</div>
+</div>
+
+<div class="bd center">
+    <div id="svg" style="position: relative; width: 1300px; "></div>
+</div>
+
+    <script>
+    //basic map config with custom fills, mercator projection
+    var map = new Datamap({
+        scope: 'world',
+        element: document.getElementById('svg'),
+        projection: 'equirectangular',
+//        setProjection: function(element) {
+//            var projection = d3.geo.equirectangular()
+////            var projection = d3.geo.azimuthalEqualArea()
+//                    .center([0, 20])
+//                    .rotate([0, 0])
+//                    .scale(220)
+//                    .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+//            var path = d3.geo.path()
+//                    .projection(projection);
+//
+//            return {path: path, projection: projection};
+//        },
+        height: 700,
+        fills: {
+            defaultFill: '#303f52',
+            red: 'red',
+        },  geographyConfig: {
+            highlightOnHover: false,
+            popupOnHover: false,
+//            highlightFillColor: 'red',
+        },
+    });
+
+    map.graticule();
+
+</script>
+    <!--{{data}}-->
+
+    <!--Javascript Libaries-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://cdn.pubnub.com/sdk/pubnub-angular/pubnub-angular-3.2.0.js"></script>
+    <script src="https://cdn.pubnub.com/pubnub-3.14.5.js"></script>
+    <script>
+        var app = angular.module('app', ['pubnub.angular.service']);
+
+        app.controller('controller', function($scope, Pubnub){
+
+            $scope.data = [];
+
+            $scope.keys = {publish_key: 'pub-c-88acaf32-5578-438f-8d85-d11659da9bb6',
+                            subscribe_key: 'sub-c-8d85ca5e-2629-11e6-9f24-02ee2ddab7fe'
+            }
+
+            Pubnub.init({
+                publish_key: $scope.keys.publish_key,
+                subscribe_key: $scope.keys.subscribe_key
+            })
+
+            function publishTweet(tweet) {
+                if(tweet == null || tweet.length == 0) return;
+//                for(var i=0; i<tweet.length; i++)
+                map.bubbles([tweet[0]]);
+                console.log('hi')
+            }
+
+            counter = 0;
+            Pubnub.subscribe({
+                channel : 'tweet_stream',
+                message : function(tweetArray){
+                    counter++;
+                    if(counter < 200){
+                        publishTweet(tweetArray);
+                    }
+                    if(counter > 220) counter = 0;
+                    if(counter == 5) console.log(tweetArray);
+
+                    $scope.$digest();
+                },
+                connect : function(data) {
+                    Pubnub.publish({
+                        channel : 'tweet_stream',
+                        message : 'Successfully connected'
+                    });
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
