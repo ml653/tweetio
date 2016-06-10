@@ -189,7 +189,7 @@
 
 			var runDataStream = function(tweet){
 				//Appends to angular variable array for databinding
-				if(tweet[0].name == "" || tweet[0].name == null)
+				if(tweet[0] == null) return;
 				$scope.data.unshift(tweet[0]);
 				if($scope.data.length > 25) $scope.data.pop();
 				$scope.$digest();
@@ -328,7 +328,7 @@
 						}
 					}
 					//To allow databindings to catch up.  Not optimized
-					if(counter > 220) counter = 0;
+					if(counter > 200) counter = 0;
 					//For debugging
 					if(counter == 5) console.log(tweetArray);
 				},

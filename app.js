@@ -11,7 +11,7 @@ var search = require('./routes/search');
 
 var app = express();
 console.log('application initialized');
-//tweet.start();
+tweet.start();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
