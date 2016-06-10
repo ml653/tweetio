@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72062665">
-              <caret line="207" column="30" selection-start-line="207" selection-start-column="30" selection-end-line="207" selection-end-column="30" />
+            <state vertical-scroll-proportion="-2.1764705">
+              <caret line="185" column="17" selection-start-line="185" selection-start-column="17" selection-end-line="185" selection-end-column="17" />
               <folding>
                 <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="e#4049#4093#0" expanded="false" />
@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.7777777">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.5159705">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -119,10 +119,10 @@
         <option value="$PROJECT_DIR$/pubnub.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/javascripts/pubnub.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/js/tweet.js" />
         <option value="$PROJECT_DIR$/routes/search.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -757,12 +757,12 @@
       <workItem from="1465409780882" duration="14567000" />
       <workItem from="1465470159938" duration="22506000" />
       <workItem from="1465551200539" duration="79000" />
-      <workItem from="1465551373235" duration="6172000" />
+      <workItem from="1465551373235" duration="6302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82499000" />
+    <option name="totallyTimeSpent" value="82629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="170" y="23" width="1270" height="799" extended-state="0" />
@@ -1198,18 +1198,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.7777777">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72062665">
-          <caret line="207" column="30" selection-start-line="207" selection-start-column="30" selection-end-line="207" selection-end-column="30" />
+        <state vertical-scroll-proportion="-2.1764705">
+          <caret line="185" column="17" selection-start-line="185" selection-start-column="17" selection-end-line="185" selection-end-column="17" />
           <folding>
             <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="e#4049#4093#0" expanded="false" />
@@ -1226,6 +1218,14 @@
             <element signature="e#12435#13241#0" expanded="false" />
             <element signature="e#13280#13522#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5159705">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
