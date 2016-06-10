@@ -51,14 +51,14 @@
 						Tweettweet IO
 					</h1>
 
-				<form id="contact-form" class="clearfix">
-						<div class="col-sm-10">
-							<input type="text"  class="form-control" id="search" name="search" required placeholder="Search Trending">
-						</div>
-						<div class="col-sm-2">
-							<button type='button' class="btn form-control">Search</button>
-						</div>
-				</form>
+				<!--<form id="contact-form" class="clearfix">-->
+						<!--<div class="col-sm-10">-->
+							<!--<input type="text"  class="form-control" id="search" name="search" required placeholder="Search Trending">-->
+						<!--</div>-->
+						<!--<div class="col-sm-2">-->
+							<!--<button type='button' class="btn form-control">Search</button>-->
+						<!--</div>-->
+				<!--</form>-->
 
 				<div class='trending'>
 					<div class="col-sm-4">
@@ -69,11 +69,10 @@
 						<button type='button' class="trending-box form-control"
 								ng-click="chooseSentiment()">Sentiment</button>
 					</div>
-					<div class="col-sm-4">
-						<button type='button' class="trending-box form-control">Trending Now</button>
-					</div>
+					<!--<div class="col-sm-4">-->
+						<!--<button type='button' class="trending-box form-control">Trending Now</button>-->
+					<!--</div>-->
 				</div>
-
 			</div>
 
 			<div class="flex-center choice">
@@ -342,19 +341,15 @@
 		});
 
 		var query = function(query){
+			query = query.split(' ').join('+');
 			$.ajax({
-				url: '/search',
-				data: {
-					hi: 'bye'
-				},
-				dataType: 'jsonp',
+				url: '/search?v='+query,
 				type: 'GET',
 				error: function(error) {
 					console.log(error);
 				},
 				success: function(data) {
-					console.log(data)
-					console.log('received');
+					console.log('Data received');
 				},
 			});
 		}

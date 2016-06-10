@@ -78,9 +78,7 @@ tweet.query = function(query){
     query = query.split(' ').join('+');
     console.log(query);
 }
-//tweet.twitter.get('trends/available', {}, function(err, data, response) {
-    //console.log(data)
-//})
+
 
 function publishTweet (tweet) {
     pubnub.publish({
@@ -88,7 +86,7 @@ function publishTweet (tweet) {
         channel: 'tweet_stream',
         message: tweet,
         callback: function (details) {
-            console.log(details);
+            //console.log(details);
         }
     });
 }

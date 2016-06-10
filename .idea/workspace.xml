@@ -23,11 +23,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tweet.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5874674">
+              <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+              <folding>
+                <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#4049#4093#0" expanded="false" />
+                <element signature="e#4854#8209#0" expanded="false" />
+                <element signature="e#8612#8782#0" expanded="false" />
+                <element signature="e#8820#9051#0" expanded="false" />
+                <element signature="e#9091#9347#0" expanded="false" />
+                <element signature="e#9422#9794#0" expanded="false" />
+                <element signature="e#9888#10381#0" expanded="false" />
+                <element signature="e#10492#11069#0" expanded="false" />
+                <element signature="e#11147#11720#0" expanded="false" />
+                <element signature="e#11808#12073#0" expanded="false" />
+                <element signature="e#12089#12182#0" expanded="false" />
+                <element signature="e#12249#12373#0" expanded="false" />
+                <element signature="e#12437#13243#0" expanded="false" />
+                <element signature="e#13282#13524#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.7777777">
+              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tweet.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/tweet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61981565">
-              <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding>
                 <element signature="e#780#2415#0" expanded="false" />
                 <element signature="e#869#2057#0" expanded="false" />
@@ -38,21 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
+      <file leaf-file-name="search.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8888888">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8888888">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+            <state vertical-scroll-proportion="-8.888889">
+              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -92,11 +118,12 @@
         <option value="$PROJECT_DIR$/public/stylesheets/style.sass" />
         <option value="$PROJECT_DIR$/public/assets/css/style.css" />
         <option value="$PROJECT_DIR$/pubnub.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/pubnub.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/pubnub.js" />
+        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/js/tweet.js" />
+        <option value="$PROJECT_DIR$/routes/search.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
   </component>
@@ -186,6 +213,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tweetio" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -713,12 +758,12 @@
       <workItem from="1465409780882" duration="14567000" />
       <workItem from="1465470159938" duration="22506000" />
       <workItem from="1465551200539" duration="79000" />
-      <workItem from="1465551373235" duration="2327000" />
+      <workItem from="1465551373235" duration="6012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78654000" />
+    <option name="totallyTimeSpent" value="82339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="170" y="23" width="1270" height="799" extended-state="0" />
@@ -809,21 +854,21 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#3973#4017#0" expanded="false" />
-            <element signature="e#4778#8133#0" expanded="false" />
-            <element signature="e#8536#8706#0" expanded="false" />
-            <element signature="e#8744#8975#0" expanded="false" />
-            <element signature="e#9015#9271#0" expanded="false" />
-            <element signature="e#9346#9718#0" expanded="false" />
-            <element signature="e#9812#10305#0" expanded="false" />
-            <element signature="e#10416#10993#0" expanded="false" />
-            <element signature="e#11071#11644#0" expanded="false" />
-            <element signature="e#11732#11997#0" expanded="false" />
-            <element signature="e#12013#12106#0" expanded="false" />
-            <element signature="e#12173#12297#0" expanded="false" />
-            <element signature="e#12361#13167#0" expanded="false" />
+            <element signature="e#4049#4093#0" expanded="false" />
+            <element signature="e#4854#8209#0" expanded="false" />
+            <element signature="e#8612#8782#0" expanded="false" />
+            <element signature="e#8820#9051#0" expanded="false" />
+            <element signature="e#9091#9347#0" expanded="false" />
+            <element signature="e#9422#9794#0" expanded="false" />
+            <element signature="e#9888#10381#0" expanded="false" />
+            <element signature="e#10492#11069#0" expanded="false" />
+            <element signature="e#11147#11720#0" expanded="false" />
+            <element signature="e#11808#12073#0" expanded="false" />
+            <element signature="e#12089#12182#0" expanded="false" />
+            <element signature="e#12249#12373#0" expanded="false" />
+            <element signature="e#12437#13243#0" expanded="false" />
+            <element signature="e#13282#13524#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -862,21 +907,21 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#3973#4017#0" expanded="false" />
-            <element signature="e#4778#8133#0" expanded="false" />
-            <element signature="e#8536#8706#0" expanded="false" />
-            <element signature="e#8744#8975#0" expanded="false" />
-            <element signature="e#9015#9271#0" expanded="false" />
-            <element signature="e#9346#9718#0" expanded="false" />
-            <element signature="e#9812#10305#0" expanded="false" />
-            <element signature="e#10416#10993#0" expanded="false" />
-            <element signature="e#11071#11644#0" expanded="false" />
-            <element signature="e#11732#11997#0" expanded="false" />
-            <element signature="e#12013#12106#0" expanded="false" />
-            <element signature="e#12173#12297#0" expanded="false" />
-            <element signature="e#12361#13167#0" expanded="false" />
+            <element signature="e#4049#4093#0" expanded="false" />
+            <element signature="e#4854#8209#0" expanded="false" />
+            <element signature="e#8612#8782#0" expanded="false" />
+            <element signature="e#8820#9051#0" expanded="false" />
+            <element signature="e#9091#9347#0" expanded="false" />
+            <element signature="e#9422#9794#0" expanded="false" />
+            <element signature="e#9888#10381#0" expanded="false" />
+            <element signature="e#10492#11069#0" expanded="false" />
+            <element signature="e#11147#11720#0" expanded="false" />
+            <element signature="e#11808#12073#0" expanded="false" />
+            <element signature="e#12089#12182#0" expanded="false" />
+            <element signature="e#12249#12373#0" expanded="false" />
+            <element signature="e#12437#13243#0" expanded="false" />
+            <element signature="e#13282#13524#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1119,63 +1164,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/pubnub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.985258">
-          <caret line="329" column="0" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.4073107">
-          <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#3973#4017#0" expanded="false" />
-            <element signature="e#4778#8133#0" expanded="false" />
-            <element signature="e#8536#8706#0" expanded="false" />
-            <element signature="e#8744#8975#0" expanded="false" />
-            <element signature="e#9015#9271#0" expanded="false" />
-            <element signature="e#9346#9718#0" expanded="false" />
-            <element signature="e#9812#10305#0" expanded="false" />
-            <element signature="e#10416#10993#0" expanded="false" />
-            <element signature="e#11071#11644#0" expanded="false" />
-            <element signature="e#11732#11997#0" expanded="false" />
-            <element signature="e#12013#12106#0" expanded="false" />
-            <element signature="e#12173#12297#0" expanded="false" />
-            <element signature="e#12361#13167#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8888888">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8888888">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.20737328">
+          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/pubnub.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36855036">
+          <caret line="335" column="0" selection-start-line="335" selection-start-column="0" selection-end-line="335" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/tweet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61981565">
-          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
             <element signature="e#780#2415#0" expanded="false" />
             <element signature="e#869#2057#0" expanded="false" />
             <element signature="e#2104#2199#0" expanded="false" />
             <element signature="e#2247#2385#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.888889">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7777777">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5874674">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+          <folding>
+            <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#4049#4093#0" expanded="false" />
+            <element signature="e#4854#8209#0" expanded="false" />
+            <element signature="e#8612#8782#0" expanded="false" />
+            <element signature="e#8820#9051#0" expanded="false" />
+            <element signature="e#9091#9347#0" expanded="false" />
+            <element signature="e#9422#9794#0" expanded="false" />
+            <element signature="e#9888#10381#0" expanded="false" />
+            <element signature="e#10492#11069#0" expanded="false" />
+            <element signature="e#11147#11720#0" expanded="false" />
+            <element signature="e#11808#12073#0" expanded="false" />
+            <element signature="e#12089#12182#0" expanded="false" />
+            <element signature="e#12249#12373#0" expanded="false" />
+            <element signature="e#12437#13243#0" expanded="false" />
+            <element signature="e#13282#13524#0" expanded="false" />
           </folding>
         </state>
       </provider>

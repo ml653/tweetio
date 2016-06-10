@@ -332,7 +332,7 @@
                     var url = pubNubCore.build_url(setup.url, data);
 
                     var newURL = "https" + url.substring(4, url.length);
-                    console.log(newURL);
+                    //console.log(newURL);
 
                     //console.log(url);
                     //console.log(setup.url);
