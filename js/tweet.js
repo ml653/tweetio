@@ -70,7 +70,7 @@ tweet.start = function () {
             publishTweet(tweetArray); // publishes tweet to pubnub
             tweetArray=[];
         }
-    }, 100);
+    }, 150);
     return response;
 }
 
@@ -78,7 +78,6 @@ tweet.query = function(query){
     query = query.split(' ').join('+');
     console.log(query);
 }
-
 
 function publishTweet (tweet) {
     pubnub.publish({
