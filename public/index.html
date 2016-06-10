@@ -189,6 +189,7 @@
 
 			var runDataStream = function(tweet){
 				//Appends to angular variable array for databinding
+				if(tweet[0].name == "" || tweet[0].name == null)
 				$scope.data.unshift(tweet[0]);
 				if($scope.data.length > 25) $scope.data.pop();
 				$scope.$digest();
