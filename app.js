@@ -11,7 +11,7 @@ var users = require('./routes/users');
 
 var app = express();
 console.log('application intialized');
-tweet.start();
+//tweet.start();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

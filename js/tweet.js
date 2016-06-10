@@ -88,7 +88,7 @@ function publishTweet (tweet) {
         channel: 'tweet_stream',
         message: tweet,
         callback: function (details) {
-            //console.log(details);
+            console.log(details);
         }
     });
 }

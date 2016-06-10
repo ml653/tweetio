@@ -23,37 +23,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
+      <file leaf-file-name="tweet.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/tweet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24020888">
-              <caret line="100" column="23" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.61981565">
+              <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
               <folding>
-                <element signature="n#div#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#3973#4017#0" expanded="false" />
-                <element signature="e#4778#8133#0" expanded="false" />
-                <element signature="e#8536#8706#0" expanded="false" />
-                <element signature="e#8744#8975#0" expanded="false" />
-                <element signature="e#9015#9271#0" expanded="false" />
-                <element signature="e#9346#9718#0" expanded="false" />
-                <element signature="e#9812#10305#0" expanded="false" />
-                <element signature="e#10416#10993#0" expanded="false" />
-                <element signature="e#11071#11644#0" expanded="false" />
-                <element signature="e#11732#11997#0" expanded="false" />
-                <element signature="e#12013#12106#0" expanded="false" />
-                <element signature="e#12173#12297#0" expanded="false" />
-                <element signature="e#12361#13167#0" expanded="false" />
+                <element signature="e#780#2415#0" expanded="false" />
+                <element signature="e#869#2057#0" expanded="false" />
+                <element signature="e#2104#2199#0" expanded="false" />
+                <element signature="e#2247#2385#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pubnub.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/pubnub.js">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0">
-              <caret line="329" column="0" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.8888888">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.8888888">
+              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -91,13 +90,13 @@
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/public/javascripts/datamap.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.sass" />
-        <option value="$PROJECT_DIR$/js/tweet.js" />
-        <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/assets/css/style.css" />
         <option value="$PROJECT_DIR$/pubnub.js" />
         <option value="$PROJECT_DIR$/public/javascripts/pubnub.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/js/tweet.js" />
       </list>
     </option>
   </component>
@@ -187,24 +186,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tweetio" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -732,12 +713,12 @@
       <workItem from="1465409780882" duration="14567000" />
       <workItem from="1465470159938" duration="22506000" />
       <workItem from="1465551200539" duration="79000" />
-      <workItem from="1465551373235" duration="2026000" />
+      <workItem from="1465551373235" duration="2327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78353000" />
+    <option name="totallyTimeSpent" value="78654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="170" y="23" width="1270" height="799" extended-state="0" />
@@ -1122,39 +1103,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2673522">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tweet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
-          <folding>
-            <element signature="e#780#2415#0" expanded="false" />
-            <element signature="e#869#2057#0" expanded="false" />
-            <element signature="e#2104#2199#0" expanded="false" />
-            <element signature="e#2247#2385#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1169,7 +1121,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/pubnub.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
+        <state vertical-scroll-proportion="2.985258">
           <caret line="329" column="0" selection-start-line="329" selection-start-column="0" selection-end-line="329" selection-end-column="0" />
           <folding />
         </state>
@@ -1177,8 +1129,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24020888">
-          <caret line="100" column="23" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
+        <state vertical-scroll-proportion="3.4073107">
+          <caret line="99" column="14" selection-start-line="99" selection-start-column="14" selection-end-line="99" selection-end-column="14" />
           <folding>
             <element signature="n#div#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#script#8;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -1195,6 +1147,35 @@
             <element signature="e#12013#12106#0" expanded="false" />
             <element signature="e#12173#12297#0" expanded="false" />
             <element signature="e#12361#13167#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8888888">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8888888">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/tweet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61981565">
+          <caret line="89" column="33" selection-start-line="89" selection-start-column="33" selection-end-line="89" selection-end-column="33" />
+          <folding>
+            <element signature="e#780#2415#0" expanded="false" />
+            <element signature="e#869#2057#0" expanded="false" />
+            <element signature="e#2104#2199#0" expanded="false" />
+            <element signature="e#2247#2385#0" expanded="false" />
           </folding>
         </state>
       </provider>
