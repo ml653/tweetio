@@ -70,7 +70,7 @@ tweet.start = function () {
             publishTweet(tweetArray); // publishes tweet to pubnub
             tweetArray=[];
         }
-    }, 100);
+    }, 2000);
     return response;
 }
 

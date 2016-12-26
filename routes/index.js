@@ -5,7 +5,7 @@ var tweet = require('../js/tweet');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendFile(path.resolve(__dirname+"/../public/dangular.html"));
+  res.sendFile(path.resolve(__dirname+"/../public/angular.html"));
 });
 //
 //router.get('/search', function(req, res, next) {
